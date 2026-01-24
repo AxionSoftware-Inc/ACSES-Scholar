@@ -4,20 +4,33 @@
     "name": "ACSES Academy",
     "tagline": "Courses and mentorship.",
     "status": "MVP",
-    "type": "Education"
+    "type": "Education",
+    "description": "Short, practical courses with clear outcomes. Built for fast skill growth.",
+    "highlights": ["YouTube-based lessons", "Structured course cards", "Scalable to full LMS later"],
+    "links": [
+      { "label": "Open", "href": "/academy" }
+    ]
   },
   {
     "slug": "scholar",
     "name": "ACSES Scholar",
     "tagline": "Knowledge base & materials.",
     "status": "Concept",
-    "type": "Knowledge"
+    "type": "Knowledge",
+    "description": "A curated library of materials — from school textbooks to advanced references.",
+    "highlights": ["Fast search later", "Content-first approach (JSON → DB)", "Separate brand site when it grows"],
+    "links": [
+      { "label": "Open", "href": "/scholar" }
+    ]
   },
   {
     "slug": "university",
     "name": "ACSES University",
-    "tagline": "Structured long-form programs.",
+    "tagline": "Long-form programs and certification paths.",
     "status": "Planned",
-    "type": "Education"
+    "type": "Education",
+    "description": "A structured learning track with deep programs and measurable progression.",
+    "highlights": ["Programs", "Tracks", "Certification (future)"],
+    "links": []
   }
 ]

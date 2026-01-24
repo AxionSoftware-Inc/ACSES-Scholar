@@ -3,65 +3,90 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24">
-      <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-black/10 blur-3xl dark:bg-white/10" />
-        <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-black/5 blur-3xl dark:bg-white/5" />
+    <section className="relative overflow-hidden">
+      {/* background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-black/10 blur-3xl dark:bg-white/10" />
+        <div className="absolute -bottom-40 right-0 h-[420px] w-[420px] rounded-full bg-black/5 blur-3xl dark:bg-white/5" />
       </div>
 
       <Container>
-        <div className="grid gap-10 md:grid-cols-12 md:items-center">
+        <div className="relative grid gap-10 py-16 md:grid-cols-12 md:items-center md:py-24">
           <div className="md:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-1 text-xs text-black/70 dark:border-white/10 dark:text-white/70">
-              ACSES • Software • Academy • Hardware • R&D
+            <div className="inline-flex items-center gap-2 rounded-full border border-border/40 bg-muted/50 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+              ACSES • Studio / Academy / Lab
             </div>
 
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-6xl">
-              Build serious products with a studio that ships.
+            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground md:text-6xl">
+              One ecosystem to build, ship, and teach.
             </h1>
 
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-black/70 dark:text-white/70">
-              We design and develop software, create educational platforms, prototype hardware,
-              and publish research-grade visualizations — inside one ecosystem.
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+              ACSES develops software products, runs a course ecosystem, prototypes hardware,
+              and publishes research-grade visualizations.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="rounded-full bg-black px-5 py-2.5 text-sm text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
+                className="ac-btn bg-foreground text-background hover:opacity-90 dark:bg-foreground dark:text-background"
               >
                 Start a project
               </Link>
+
               <Link
-                href="/projects"
-                className="rounded-full border border-black/15 px-5 py-2.5 text-sm hover:border-black/30 dark:border-white/15 dark:hover:border-white/30"
+                href="/academy"
+                className="ac-btn border border-border/20 bg-background/50 hover:bg-muted"
               >
-                Explore ecosystem
+                Open Academy
               </Link>
+
+              <a
+                href="https://www.youtube.com"
+                className="ac-btn border border-border/20 bg-transparent hover:bg-muted"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Watch demo
+              </a>
+            </div>
+
+            <div className="mt-10 grid max-w-xl grid-cols-3 gap-3">
+              <div className="rounded-2xl border border-border/10 bg-card/50 p-4">
+                <div className="text-xs text-muted-foreground">Delivery</div>
+                <div className="mt-1 text-sm font-medium">MVP → Product</div>
+              </div>
+              <div className="rounded-2xl border border-border/10 bg-card/50 p-4">
+                <div className="text-xs text-muted-foreground">Focus</div>
+                <div className="mt-1 text-sm font-medium">Quality systems</div>
+              </div>
+              <div className="rounded-2xl border border-border/10 bg-card/50 p-4">
+                <div className="text-xs text-muted-foreground">Ecosystem</div>
+                <div className="mt-1 text-sm font-medium">Projects scale out</div>
+              </div>
             </div>
           </div>
 
           <div className="md:col-span-5">
-            <div className="rounded-3xl border border-black/10 p-6 shadow-sm dark:border-white/10">
-              <div className="text-sm text-black/60 dark:text-white/60">Core capabilities</div>
-              <ul className="mt-4 space-y-3 text-sm">
-                <li className="flex items-center justify-between">
-                  <span className="text-black/80 dark:text-white/80">Product engineering</span>
-                  <span className="text-black/50 dark:text-white/50">Web • Mobile • AR</span>
-                </li>
-                <li className="flex items-center justify-between">
-                  <span className="text-black/80 dark:text-white/80">Academy platform</span>
-                  <span className="text-black/50 dark:text-white/50">Courses • Mentorship</span>
-                </li>
-                <li className="flex items-center justify-between">
-                  <span className="text-black/80 dark:text-white/80">Hardware prototyping</span>
-                  <span className="text-black/50 dark:text-white/50">IoT • Devices</span>
-                </li>
-                <li className="flex items-center justify-between">
-                  <span className="text-black/80 dark:text-white/80">R&D visualization</span>
-                  <span className="text-black/50 dark:text-white/50">Science • Simulation</span>
-                </li>
-              </ul>
+            <div className="overflow-hidden rounded-3xl border border-border/10 bg-card/40 shadow-sm backdrop-blur">
+              <div className="p-4">
+                <div className="text-sm font-medium">Featured</div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  Replace this with your best product screenshot later.
+                </div>
+              </div>
+
+              {/* Use a remote image for now */}
+              <img
+                src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1600&q=80"
+                alt="ACSES visual"
+                className="h-72 w-full object-cover md:h-80"
+                loading="lazy"
+              />
+
+              <div className="p-4 text-xs text-muted-foreground">
+                Tip: later we’ll swap to Next Image + your own brand visuals.
+              </div>
             </div>
           </div>
         </div>

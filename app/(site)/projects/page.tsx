@@ -7,7 +7,7 @@ export default function ProjectsPage() {
         <main className="py-14 md:py-20">
             <Container>
                 <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">Ecosystem</h1>
-                <p className="mt-2 max-w-2xl text-sm text-black/70 dark:text-white/70">
+                <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
                     Projects inside ACSES — from concept to standalone platforms.
                 </p>
 
@@ -16,11 +16,11 @@ export default function ProjectsPage() {
                         <Link
                             key={p.slug}
                             href={`/projects/${p.slug}`}
-                            className="rounded-3xl border border-black/10 p-6 shadow-sm hover:border-black/25 dark:border-white/10 dark:hover:border-white/25"
+                            className="ac-card ac-card-hover p-6"
                         >
                             <div className="text-lg font-semibold">{p.name}</div>
-                            <div className="mt-2 text-sm text-black/70 dark:text-white/70">{p.tagline}</div>
-                            <div className="mt-4 text-xs text-black/50 dark:text-white/50">
+                            <div className="mt-2 text-sm text-muted-foreground">{p.tagline}</div>
+                            <div className="mt-4 text-xs text-muted-foreground/60">
                                 {p.type} • {p.status}
                             </div>
                         </Link>

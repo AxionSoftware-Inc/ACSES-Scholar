@@ -1,20 +1,121 @@
 @import "tailwindcss";
 
+@theme {
+  /* Semantic Colors Map */
+  --color-background: rgb(var(--bg));
+  --color-foreground: rgb(var(--fg));
+
+  --color-card: rgb(var(--card));
+  --color-card-foreground: rgb(var(--card-fg));
+
+  --color-muted: rgb(var(--muted));
+  --color-muted-foreground: rgb(var(--muted-fg));
+
+  --color-accent: rgb(var(--accent));
+  --color-accent-foreground: rgb(var(--accent-fg));
+
+  --color-border: rgb(var(--border-rgb));
+  /* handled carefully */
+  --color-input: rgb(var(--border-rgb));
+
+  --radius-xl: 1.5rem;
+  /* rounded-3xl equivalent usually */
+  --radius-2xl: 2rem;
+}
+
 :root {
+  /* Base - Pure White / Dark Gray */
   --bg: 255 255 255;
   --fg: 10 10 12;
+
+  /* Cards */
+  --card: 255 255 255;
+  --card-fg: 10 10 12;
+
+  /* Muted backgrounds */
+  --muted: 244 245 247;
+  --muted-fg: 100 100 105;
+
+  /* Borders - stored as RGB components for usage with /alpha */
+  --border-rgb: 20 20 24;
+
+  /* Primary Brand (Indigo) */
+  --accent: 79 70 229;
+  --accent-fg: 255 255 255;
 }
 
 .dark {
-  --bg: 10 10 12;
-  --fg: 245 245 246;
+  /* Pure Black or nice deep gray */
+  --bg: 5 5 5;
+  --fg: 240 240 242;
+
+  --card: 15 15 18;
+  --card-fg: 240 240 242;
+
+  --muted: 24 24 28;
+  --muted-fg: 160 160 165;
+
+  --border-rgb: 255 255 255;
+
+  --accent: 99 102 241;
+  --accent-fg: 0 0 0;
 }
 
-html, body {
-  height: 100%;
+/* Base Styles */
+@layer base {
+
+  html,
+  body {
+    height: 100%;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Default border color using opacity */
+  *,
+  ::before,
+  ::after {
+    border-color: rgba(var(--border-rgb), 0.1);
+  }
+
+  .dark *,
+  .dark ::before,
+  .dark ::after {
+    border-color: rgba(var(--border-rgb), 0.12);
+  }
 }
 
-body {
-  color: rgb(var(--fg));
-  background: rgb(var(--bg));
+/* Component Classes */
+@layer components {
+  .ac-container {
+    @apply mx-auto w-full max-w-[1200px] px-4 md:px-6;
+  }
+
+  .ac-card {
+    @apply rounded-[24px] border border-border/10 bg-card text-card-foreground shadow-sm transition;
+  }
+
+  .ac-card-hover {
+    @apply hover:border-border/20 hover:shadow-md;
+  }
+
+  .ac-badge {
+    @apply inline-flex items-center rounded-full border border-border/10 bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground;
+  }
+
+  /* Typography */
+  .ac-h1 {
+    @apply text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl;
+  }
+
+  .ac-h2 {
+    @apply text-3xl font-semibold tracking-tight md:text-4xl;
+  }
+
+  .ac-h3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  .ac-lead {
+    @apply text-lg text-muted-foreground leading-relaxed;
+  }
 }

@@ -1,30 +1,76 @@
-import projects from "@/app/content/projects.json";
-
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { Container } from "../../../components/layout/Container";
+import projects from "../../../content/projects.json";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
-
-  if (!project) return null;
+export default function ProjectDetail({ params }: { params: { slug: string } }) {
+  const p = projects.find((x) => x.slug === params.slug);
+  if (!p) return notFound();
 
   return (
     <main className="py-14 md:py-20">
-      <div className="container mx-auto max-w-4xl px-4">
-        <div className="rounded-3xl border border-black/10 p-8 shadow-sm dark:border-white/10">
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{project.name}</h1>
-            <div className="rounded-full border border-black/10 px-3 py-1 text-xs text-black/60 dark:border-white/10 dark:text-white/60">
-              {project.status}
-            </div>
-          </div>
+      <Container>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{p.name}</h1>
 
-          <p className="mt-4 text-lg text-black/70 dark:text-white/70">{project.tagline}</p>
-          <p className="mt-2 text-sm text-black/60 dark:text-white/60">{project.type}</p>
+          <div className="flex items-center gap-2">
+            <span className="rounded-full border border-border/10 px-3 py-1 text-sm text-muted-foreground">
+              {p.type}
+            </span>
+            <span className="rounded-full border border-border/10 px-3 py-1 text-sm text-muted-foreground">
+              {p.status}
+            </span>
+          </div>
         </div>
-      </div>
+
+        <p className="mt-4 max-w-3xl text-base text-muted-foreground">
+          {p.description}
+        </p>
+
+        {p.highlights?.length ? (
+          <div className="mt-8 rounded-3xl border border-border/10 bg-card p-6 shadow-sm">
+            <div className="text-sm font-medium">Highlights</div>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+              {p.highlights.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        {p.links?.length ? (
+          <div className="mt-8 flex flex-wrap gap-3">
+            {p.links.map((l) => (
+              <Link
+                key={l.href + l.label}
+                href={l.href}
+                className="ac-btn bg-foreground text-background hover:opacity-90 dark:bg-foreground dark:text-background"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link
+              href="/projects"
+              className="ac-btn border border-border/20 bg-background/50 hover:bg-muted"
+            >
+              Back to Ecosystem
+            </Link>
+          </div>
+        ) : (
+          <div className="mt-8">
+            <Link
+              href="/projects"
+              className="ac-btn border border-border/20 bg-background/50 hover:bg-muted"
+            >
+              Back to Ecosystem
+            </Link>
+          </div>
+        )}
+      </Container>
     </main>
   );
 }

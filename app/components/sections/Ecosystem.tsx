@@ -8,7 +8,7 @@ export function Ecosystem() {
         <section className="py-14 md:py-20">
             <Container>
                 <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Ecosystem</h2>
-                <p className="mt-2 max-w-2xl text-sm text-black/70 dark:text-white/70">
+                <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
                     Each project starts inside ACSES. When it grows, it becomes a standalone product.
                 </p>
 
@@ -17,17 +17,17 @@ export function Ecosystem() {
                         <Link
                             key={p.slug}
                             href={`/projects/${p.slug}`}
-                            className="group rounded-3xl border border-black/10 p-6 shadow-sm transition hover:border-black/25 dark:border-white/10 dark:hover:border-white/25"
+                            className="ac-card ac-card-hover group p-6"
                         >
                             <div className="flex items-center justify-between">
                                 <div className="text-lg font-semibold">{p.name}</div>
-                                <div className="rounded-full border border-black/10 px-2 py-1 text-xs text-black/60 dark:border-white/10 dark:text-white/60">
+                                <div className="rounded-full border border-border/10 px-2 py-1 text-xs text-muted-foreground">
                                     {p.status}
                                 </div>
                             </div>
-                            <div className="mt-2 text-sm text-black/70 dark:text-white/70">{p.tagline}</div>
-                            <div className="mt-4 text-xs text-black/50 dark:text-white/50">{p.type}</div>
-                            <div className="mt-5 text-sm text-black/70 group-hover:text-black dark:text-white/70 dark:group-hover:text-white">
+                            <div className="mt-2 text-sm text-muted-foreground">{p.tagline}</div>
+                            <div className="mt-4 text-xs text-muted-foreground/60">{p.type}</div>
+                            <div className="mt-5 text-sm text-muted-foreground group-hover:text-foreground">
                                 Open →
                             </div>
                         </Link>
