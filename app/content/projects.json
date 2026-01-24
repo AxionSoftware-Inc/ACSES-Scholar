@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "academy",
+    "name": "ACSES Academy",
+    "tagline": "Courses and mentorship.",
+    "status": "MVP",
+    "type": "Education"
+  },
+  {
+    "slug": "scholar",
+    "name": "ACSES Scholar",
+    "tagline": "Knowledge base & materials.",
+    "status": "Concept",
+    "type": "Knowledge"
+  },
+  {
+    "slug": "university",
+    "name": "ACSES University",
+    "tagline": "Structured long-form programs.",
+    "status": "Planned",
+    "type": "Education"
+  }
+]

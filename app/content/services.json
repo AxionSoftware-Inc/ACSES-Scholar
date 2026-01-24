@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Software Development",
+    "desc": "Web, mobile, AR experiences, internal tools, and high-performance systems."
+  },
+  {
+    "title": "Online Education",
+    "desc": "Course ecosystems, mentoring programs, and scalable learning platforms."
+  },
+  {
+    "title": "Hardware Prototyping",
+    "desc": "Small devices, IoT prototypes, sensors, and embedded integrations."
+  },
+  {
+    "title": "R&D & Scientific Visualization",
+    "desc": "Research-grade visuals, simulations, and engineering demos."
+  }
+]
