@@ -1,36 +1,44 @@
 import { Container } from "../layout/Container";
-import Link from "next/link";
-import ecosystem from "@/app/content/ecosystem.json";
+import { CheckCircle2 } from "lucide-react";
 
+const benefits = [
+    {
+        title: "Bepul Ta'lim",
+        description: "Barcha video darslar va materiallar o'quvchilar uchun mutlaqo bepul.",
+    },
+    {
+        title: "Malakali Ustozlar",
+        description: "Darslar tajribali va malakali o'qituvchilar tomonidan tayyorlangan.",
+    },
+    {
+        title: "Istalgan Vaqtda",
+        description: "Platformadan kunning istalgan vaqtida foydalanish imkoniyati.",
+    },
+];
 
 export function Ecosystem() {
     return (
-        <section className="py-14 md:py-20">
+        <section className="py-14 md:py-20 bg-muted/30" id="about">
             <Container>
-                <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Ecosystem</h2>
+                <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Nega aynan ACSES Scholar?</h2>
                 <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-                    Each project starts inside ACSES. When it grows, it becomes a standalone product.
+                    Sifatli va qulay ta&apos;lim olish imkoniyatlari.
                 </p>
 
                 <div className="mt-8 grid gap-4 md:grid-cols-3">
-                    {ecosystem.map((p) => (
-                        <Link
-                            key={p.slug}
-                            href={`/ecosystem/${p.slug}`}
-                            className="ac-card ac-card-hover group p-6"
+                    {benefits.map((b, i) => (
+                        <div
+                            key={i}
+                            className="ac-card p-6 flex flex-col gap-3"
                         >
-                            <div className="flex items-center justify-between">
-                                <div className="text-lg font-semibold">{p.name}</div>
-                                <div className="rounded-full border border-border/10 px-2 py-1 text-xs text-muted-foreground">
-                                    {p.status}
-                                </div>
+                            <div className="flex items-center gap-3">
+                                <CheckCircle2 className="text-primary h-6 w-6" />
+                                <div className="text-lg font-semibold">{b.title}</div>
                             </div>
-                            <div className="mt-2 text-sm text-muted-foreground">{p.tagline}</div>
-                            <div className="mt-4 text-xs text-muted-foreground/60">{p.category}</div>
-                            <div className="mt-5 text-sm text-muted-foreground group-hover:text-foreground">
-                                Open →
+                            <div className="text-sm text-muted-foreground leading-relaxed">
+                                {b.description}
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
             </Container>

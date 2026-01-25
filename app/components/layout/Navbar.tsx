@@ -10,15 +10,10 @@ import { Menu, X } from "lucide-react";
 type NavItem = { href: string; label: string; badge?: string; external?: boolean };
 
 const NAV: NavItem[] = [
-  { href: "/services", label: "Services" },
-  { href: "/projects", label: "Projects" },
-  { href: "/academy", label: "Academy", badge: "Beta" },
-  { href: "/ecosystem", label: "Ecosystem" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-
-  // Scholar alohida bo‘lsa:
-  // { href: "https://scholar.acses.uz", label: "Scholar", external: true },
+  { href: "/", label: "Bosh Sahifa" },
+  { href: "#classes", label: "Sinflar" },
+  { href: "#about", label: "Biz haqimizda" },
+  { href: "#contact", label: "Aloqa" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -52,7 +47,7 @@ export function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-bold tracking-tight text-foreground">ACSES</span>
-                <span className="text-[10px] font-medium text-muted-foreground">Ecosystem</span>
+                <span className="text-[10px] font-medium text-muted-foreground">Scholar</span>
               </div>
             </Link>
 

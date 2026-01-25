@@ -1,17 +1,7 @@
 import Link from "next/link";
 import { Container } from "./Container";
 
-const ecosystem = [
-  { href: "/projects", label: "Ecosystem" },
-  { href: "/projects/academy", label: "Academy (Project)" },
-  { href: "/academy", label: "Academy (Courses)" },
-];
-
-const company = [
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact / Brief" },
-];
+// removed unused arrays ecosystem and company
 
 export function Footer() {
   return (
@@ -30,20 +20,19 @@ export function Footer() {
                   ACSES
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  Studio • Academy • Lab
+                  Educational Platform
                 </div>
               </div>
             </div>
 
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              We build software products, run an education ecosystem, prototype hardware,
-              and publish research-grade visualizations — inside one scalable ecosystem.
+              Maktab o&apos;quvchilari uchun matematika va fizika fanlaridan onlayn darslar va resurslar platformasi.
             </p>
 
             {/* Contact chips */}
             <div className="mt-6 flex flex-wrap gap-2">
               <a
-                href="https://t.me/YOUR_TELEGRAM"
+                href="https://t.me/ACSES_SCHOLAR"
                 target="_blank"
                 rel="noreferrer"
                 className="ac-chip"
@@ -51,7 +40,7 @@ export function Footer() {
                 Telegram
               </a>
               <a
-                href="mailto:you@example.com"
+                href="mailto:scholar@acses.uz"
                 className="ac-chip"
               >
                 Email
@@ -60,13 +49,13 @@ export function Footer() {
                 href="/contact"
                 className="ac-chip"
               >
-                Brief
+                Aloqa
               </Link>
             </div>
 
             {/* Optional: small note */}
             <div className="mt-6 text-xs text-muted-foreground/60">
-              Based in Uzbekistan • Remote-friendly
+              O&apos;zbekistonda ishlab chiqilgan • Barcha uchun ochiq
             </div>
           </div>
 
@@ -74,47 +63,57 @@ export function Footer() {
           <div className="md:col-span-7 md:grid md:grid-cols-2 md:gap-10">
             <div>
               <div className="text-sm font-semibold text-foreground">
-                Company
+                Platforma
               </div>
               <ul className="mt-4 space-y-2">
-                {company.map((i) => (
-                  <li key={i.href}>
-                    <Link
-                      href={i.href}
-                      className="text-sm text-muted-foreground hover:text-foreground"
-                    >
-                      {i.label}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link href="#classes" className="text-sm text-muted-foreground hover:text-foreground">
+                    Sinflar
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground">
+                    Biz haqimizda
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#contact" className="text-sm text-muted-foreground hover:text-foreground">
+                    Aloqa
+                  </Link>
+                </li>
               </ul>
 
               {/* Mini CTA */}
               <div className="mt-6">
                 <Link
-                  href="/contact"
+                  href="#classes"
                   className="ac-btn bg-foreground text-background hover:opacity-90 dark:bg-foreground dark:text-background"
                 >
-                  Start a project
+                  O&apos;qishni boshlash
                 </Link>
               </div>
             </div>
 
             <div>
               <div className="text-sm font-semibold text-foreground">
-                Ecosystem
+                Resurslar
               </div>
               <ul className="mt-4 space-y-2">
-                {ecosystem.map((i) => (
-                  <li key={i.href}>
-                    <Link
-                      href={i.href}
-                      className="text-sm text-muted-foreground hover:text-foreground"
-                    >
-                      {i.label}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link href="#classes" className="text-sm text-muted-foreground hover:text-foreground">
+                    Video Darslar
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#classes" className="text-sm text-muted-foreground hover:text-foreground">
+                    Fizika
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#classes" className="text-sm text-muted-foreground hover:text-foreground">
+                    Matematika
+                  </Link>
+                </li>
               </ul>
 
               {/* Social row */}

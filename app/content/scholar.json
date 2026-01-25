@@ -1,0 +1,118 @@
+{
+    "classes": [
+        {
+            "id": "7-sinf",
+            "title": "7-sinf",
+            "subjects": [
+                {
+                    "id": "algebra-7",
+                    "title": "Algebra",
+                    "lessons": [
+                        {
+                            "id": "alg-7-1",
+                            "title": "1-dars. Chiziqli tenglamalar",
+                            "youtubeId": "Lg-w6X9D8as"
+                        },
+                        {
+                            "id": "alg-7-2",
+                            "title": "2-dars. Bir hadlar va ko'p hadlar",
+                            "youtubeId": "Lg-w6X9D8as"
+                        }
+                    ]
+                },
+                {
+                    "id": "geo-7",
+                    "title": "Geometriya",
+                    "lessons": [
+                        {
+                            "id": "geo-7-1",
+                            "title": "1-dars. Boshlang'ich tushunchalar",
+                            "youtubeId": "Lg-w6X9D8as"
+                        }
+                    ]
+                },
+                {
+                    "id": "physics-7",
+                    "title": "Fizika",
+                    "lessons": [
+                        {
+                            "id": "phys-7-1",
+                            "title": "1-dars. Fizika faniga kirish",
+                            "youtubeId": "Lg-w6X9D8as"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "8-sinf",
+            "title": "8-sinf",
+            "subjects": [
+                {
+                    "id": "algebra-8",
+                    "title": "Algebra",
+                    "lessons": [
+                        {
+                            "id": "alg-8-1",
+                            "title": "1-dars. Kvadrat ildizlar",
+                            "youtubeId": "Lg-w6X9D8as"
+                        }
+                    ]
+                },
+                {
+                    "id": "physics-8",
+                    "title": "Fizika",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "id": "9-sinf",
+            "title": "9-sinf",
+            "subjects": [
+                {
+                    "id": "algebra-9",
+                    "title": "Algebra",
+                    "lessons": []
+                },
+                {
+                    "id": "physics-9",
+                    "title": "Fizika",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "id": "10-sinf",
+            "title": "10-sinf",
+            "subjects": [
+                {
+                    "id": "algebra-10",
+                    "title": "Algebra",
+                    "lessons": []
+                },
+                {
+                    "id": "physics-10",
+                    "title": "Fizika",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "id": "11-sinf",
+            "title": "11-sinf",
+            "subjects": [
+                {
+                    "id": "algebra-11",
+                    "title": "Algebra",
+                    "lessons": []
+                },
+                {
+                    "id": "physics-11",
+                    "title": "Fizika",
+                    "lessons": []
+                }
+            ]
+        }
+    ]
+}

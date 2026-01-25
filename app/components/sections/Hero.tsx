@@ -14,55 +14,45 @@ export function Hero() {
         <div className="relative grid gap-10 py-16 md:grid-cols-12 md:items-center md:py-24">
           <div className="md:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-border/40 bg-muted/50 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
-              ACSES • Studio / Academy / Lab
+              ACSES Scholar • Online Ta&apos;lim Platformasi
             </div>
 
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground md:text-6xl">
-              One ecosystem to build, ship, and teach.
+              Kelajak ta&apos;limi — bugun.
             </h1>
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              ACSES develops software products, runs a course ecosystem, prototypes hardware,
-              and publishes research-grade visualizations.
+              Maktab o&apos;quvchilari uchun matematika va fizika fanlaridan mukammal video darslar, mashqlar va bilimni mustahkamlash tizimi.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href="#classes"
                 className="ac-btn bg-foreground text-background hover:opacity-90 dark:bg-foreground dark:text-background"
               >
-                Start a project
+                Darslarni boshlash
               </Link>
 
               <Link
-                href="/academy"
+                href="#about"
                 className="ac-btn border border-border/20 bg-background/50 hover:bg-muted"
               >
-                Open Academy
+                Batafsil ma&apos;lumot
               </Link>
-
-              <a
-                href="https://www.youtube.com"
-                className="ac-btn border border-border/20 bg-transparent hover:bg-muted"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Watch demo
-              </a>
             </div>
 
             <div className="mt-10 grid max-w-xl grid-cols-3 gap-3">
               <div className="rounded-2xl border border-border/10 bg-card/50 p-4">
-                <div className="text-xs text-muted-foreground">Delivery</div>
-                <div className="mt-1 text-sm font-medium">MVP → Product</div>
+                <div className="text-xs text-muted-foreground">Fanlar</div>
+                <div className="mt-1 text-sm font-medium">Matematika va Fizika</div>
               </div>
               <div className="rounded-2xl border border-border/10 bg-card/50 p-4">
-                <div className="text-xs text-muted-foreground">Focus</div>
-                <div className="mt-1 text-sm font-medium">Quality systems</div>
+                <div className="text-xs text-muted-foreground">Sinflar</div>
+                <div className="mt-1 text-sm font-medium">7, 8, 9, 10, 11</div>
               </div>
               <div className="rounded-2xl border border-border/10 bg-card/50 p-4">
-                <div className="text-xs text-muted-foreground">Ecosystem</div>
-                <div className="mt-1 text-sm font-medium">Projects scale out</div>
+                <div className="text-xs text-muted-foreground">Format</div>
+                <div className="mt-1 text-sm font-medium">Video darslar</div>
               </div>
             </div>
           </div>
@@ -70,23 +60,19 @@ export function Hero() {
           <div className="md:col-span-5">
             <div className="overflow-hidden rounded-3xl border border-border/10 bg-card/40 shadow-sm backdrop-blur">
               <div className="p-4">
-                <div className="text-sm font-medium">Featured</div>
+                <div className="text-sm font-medium">Video Darslar</div>
                 <div className="mt-1 text-xs text-muted-foreground">
-                  Replace this with your best product screenshot later.
+                  Har bir mavzu uchun maxsus tayyorlangan videolar
                 </div>
               </div>
 
               {/* Use a remote image for now */}
               <img
-                src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1600&q=80"
-                alt="ACSES visual"
+                src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1600&q=80"
+                alt="ACSES Scholar"
                 className="h-72 w-full object-cover md:h-80"
                 loading="lazy"
               />
-
-              <div className="p-4 text-xs text-muted-foreground">
-                Tip: later we’ll swap to Next Image + your own brand visuals.
-              </div>
             </div>
           </div>
         </div>

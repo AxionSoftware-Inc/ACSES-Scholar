@@ -1,37 +1,42 @@
 import { Container } from "../layout/Container";
-import services from "@/app/content/services.json";
-
+import Link from "next/link";
+import scholarData from "@/app/content/scholar.json";
 
 export function Services() {
   return (
-    <section className="py-14 md:py-20">
+    <section id="classes" className="py-14 md:py-20">
       <Container>
         <div className="flex items-end justify-between gap-6">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Services</h2>
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Sinflar</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-              Clear offers. Strong execution. Production-grade delivery.
+              Maktab o&apos;quvchilari uchun mavjud sinflar va fanlar.
             </p>
           </div>
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {services.map((s) => (
-            <div
-              key={s.slug}
-              className="ac-card flex flex-col justify-between p-6"
+          {scholarData.classes.map((s) => (
+            <Link
+              href={`/classes/${s.id}`}
+              key={s.id}
+              className="ac-card flex flex-col justify-between p-6 hover:border-accent hover:shadow-md transition-all cursor-pointer group"
             >
               <div>
-                <div className="text-lg font-semibold">{s.name}</div>
-                <div className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {s.tagline}
+                <div className="flex items-center justify-between">
+                  <div className="text-lg font-semibold">{s.title}</div>
+                  <span className="ac-badge bg-secondary">Video Darslar</span>
+                </div>
+                <div className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  <span className="font-medium text-foreground">Fanlar:</span>{" "}
+                  {s.subjects.map(sub => sub.title).join(", ")}
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                <span className="ac-badge bg-muted/50">{s.category}</span>
+              <div className="mt-6 flex items-center text-sm font-medium text-primary group-hover:underline">
+                Darslarni ko&apos;rish &rarr;
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </Container>
