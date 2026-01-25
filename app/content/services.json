@@ -1,18 +1,111 @@
 [
   {
-    "title": "Software Development",
-    "desc": "Web, mobile, AR experiences, internal tools, and high-performance systems."
+    "slug": "software-development",
+    "name": "Software Development",
+    "tagline": "Web apps, platforms, dashboards, and product engineering.",
+    "status": "Active",
+    "category": "Engineering",
+    "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "Software development",
+    "summary": "We design and build production-grade web systems: from MVP to scalable platforms. Clean UX, reliable architecture, and fast iteration.",
+    "deliverables": [
+      "Web application (Next.js) with responsive UI",
+      "Admin panel / dashboard",
+      "API integration and data layer",
+      "Deployment + monitoring baseline"
+    ],
+    "capabilities": [
+      "Product UI/UX",
+      "Next.js App Router",
+      "Design systems + dark mode",
+      "Integrations (payments, CRM, auth)",
+      "Performance and SEO"
+    ],
+    "stack": ["Next.js", "TypeScript", "Tailwind", "Node / APIs"],
+    "process": [
+      { "title": "Discovery", "desc": "Goals, scope, constraints, and success metrics." },
+      { "title": "Design", "desc": "Wireframes → visual system → key screens." },
+      { "title": "Build", "desc": "Iterative delivery with weekly checkpoints." },
+      { "title": "Launch", "desc": "Deploy, monitor, and stabilize." }
+    ],
+    "faq": [
+      { "q": "Can we start with MVP?", "a": "Yes. We recommend MVP-first for speed and validation." },
+      { "q": "Do you do maintenance?", "a": "Yes. We can provide support and iterative improvements." }
+    ],
+    "ctas": [
+      { "label": "Start a project", "href": "/contact", "kind": "primary" },
+      { "label": "View Projects", "href": "/projects" }
+    ]
   },
   {
-    "title": "Online Education",
-    "desc": "Course ecosystems, mentoring programs, and scalable learning platforms."
+    "slug": "education-content",
+    "name": "Education & Content",
+    "tagline": "Curriculum, courses, and YouTube-based learning products.",
+    "status": "Active",
+    "category": "Education",
+    "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "Education content",
+    "summary": "We package knowledge into structured tracks: course pages, lessons, and a scalable content pipeline that can evolve into a full LMS.",
+    "deliverables": [
+      "Course catalog structure",
+      "Course landing + lesson templates",
+      "Content pipeline (JSON-driven)",
+      "SEO-ready pages"
+    ],
+    "capabilities": [
+      "Course architecture",
+      "Content systems",
+      "Learning UX",
+      "YouTube embed integration",
+      "Localization-ready structure"
+    ],
+    "stack": ["Next.js", "Content JSON", "YouTube", "Netlify/Vercel"],
+    "process": [
+      { "title": "Curriculum plan", "desc": "Tracks, outcomes, and lesson map." },
+      { "title": "Production", "desc": "Templates + consistent publishing flow." },
+      { "title": "Platform", "desc": "Catalog, search, tags, navigation." }
+    ],
+    "faq": [
+      { "q": "Can we host videos on YouTube?", "a": "Yes. It is cost-effective and easy to scale early." }
+    ],
+    "ctas": [
+      { "label": "Open Academy", "href": "/academy", "kind": "primary" },
+      { "label": "Contact", "href": "/contact" }
+    ]
   },
   {
-    "title": "Hardware Prototyping",
-    "desc": "Small devices, IoT prototypes, sensors, and embedded integrations."
-  },
-  {
-    "title": "R&D & Scientific Visualization",
-    "desc": "Research-grade visuals, simulations, and engineering demos."
+    "slug": "research-prototyping",
+    "name": "R&D Prototyping",
+    "tagline": "Research-grade demos, scientific visualization, and rapid prototypes.",
+    "status": "Active",
+    "category": "R&D",
+    "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "Research and prototyping",
+    "summary": "We prototype complex ideas into interactive demos: simulations, 3D, AR/VR experiences, and technical proofs-of-concept.",
+    "deliverables": [
+      "Interactive demo / prototype",
+      "Technical write-up",
+      "Architecture plan for scale-up",
+      "Deployment package"
+    ],
+    "capabilities": [
+      "3D/AR/VR web experiences",
+      "Scientific visualization",
+      "Rapid prototyping",
+      "Performance constraints"
+    ],
+    "stack": ["Three.js/WebGL", "Next.js", "A-Frame/WebXR", "TypeScript"],
+    "process": [
+      { "title": "Feasibility", "desc": "Constraints and proof-of-possibility." },
+      { "title": "Prototype", "desc": "Build the core loop and validate." },
+      { "title": "Polish", "desc": "UX + performance + deployment." }
+    ],
+    "faq": [
+      { "q": "Do you support AR in browsers?", "a": "Yes, where device support is available (WebXR compatible)." }
+    ],
+    "ctas": [
+      { "label": "Start a project", "href": "/contact", "kind": "primary" },
+      { "label": "Ecosystem", "href": "/ecosystem" }
+    ]
   }
 ]
