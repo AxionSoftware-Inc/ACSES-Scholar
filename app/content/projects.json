@@ -1,36 +1,69 @@
 [
-  {
-    "slug": "academy",
-    "name": "ACSES Academy",
-    "tagline": "Courses and mentorship.",
-    "status": "MVP",
-    "type": "Education",
-    "description": "Short, practical courses with clear outcomes. Built for fast skill growth.",
-    "highlights": ["YouTube-based lessons", "Structured course cards", "Scalable to full LMS later"],
-    "links": [
-      { "label": "Open", "href": "/academy" }
-    ]
-  },
-  {
-    "slug": "scholar",
-    "name": "ACSES Scholar",
-    "tagline": "Knowledge base & materials.",
-    "status": "Concept",
-    "type": "Knowledge",
-    "description": "A curated library of materials — from school textbooks to advanced references.",
-    "highlights": ["Fast search later", "Content-first approach (JSON → DB)", "Separate brand site when it grows"],
-    "links": [
-      { "label": "Open", "href": "/scholar" }
-    ]
-  },
-  {
-    "slug": "university",
-    "name": "ACSES University",
-    "tagline": "Long-form programs and certification paths.",
-    "status": "Planned",
-    "type": "Education",
-    "description": "A structured learning track with deep programs and measurable progression.",
-    "highlights": ["Programs", "Tracks", "Certification (future)"],
-    "links": []
-  }
+    {
+        "slug": "logistics-crm",
+        "name": "Logistics CRM",
+        "tagline": "Enterprise management system for freight.",
+        "status": "Completed",
+        "category": "Web App",
+        "description": "A comprehensive CRM for a logistics company, handling fleet management, order tracking, and invoicing.",
+        "cover": {
+            "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
+            "alt": "Logistics CRM"
+        },
+        "highlights": [
+            "Real-time fleet tracking via GPS integration",
+            "Automated invoicing and payroll",
+            "Role-based access control for 50+ users"
+        ],
+        "stack": [
+            "Next.js",
+            "PostgreSQL",
+            "Tailwind",
+            "Leaflet"
+        ],
+        "metrics": [
+            {
+                "label": "Client",
+                "value": "Global Logistics"
+            },
+            {
+                "label": "Duration",
+                "value": "3 months"
+            }
+        ],
+        "links": []
+    },
+    {
+        "slug": "ecommerce-platform",
+        "name": "Retail E-commerce",
+        "tagline": "Modern storefront for a fashion brand.",
+        "status": "Live",
+        "category": "E-commerce",
+        "description": "A high-performance e-commerce store with custom cart logic, payment integration, and inventory sync.",
+        "cover": {
+            "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
+            "alt": "Fashion Store"
+        },
+        "highlights": [
+            "Headless Shopify integration",
+            "sub-1s page loads",
+            "Mobile-first design"
+        ],
+        "stack": [
+            "Next.js",
+            "Shopify",
+            "Framer Motion"
+        ],
+        "metrics": [
+            {
+                "label": "Client",
+                "value": "Fashion Co."
+            },
+            {
+                "label": "Impact",
+                "value": "+40% Sales"
+            }
+        ],
+        "links": []
+    }
 ]

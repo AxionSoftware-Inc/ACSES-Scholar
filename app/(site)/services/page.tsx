@@ -6,7 +6,7 @@ export default function ServicesPage() {
         <main className="py-14 md:py-20">
             <Container>
                 <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">Services</h1>
-                <p className="mt-2 text-sm text-black/70 dark:text-white/70">
+                <p className="mt-2 text-sm text-muted-foreground">
                     We offer high-quality software development services.
                 </p>
 

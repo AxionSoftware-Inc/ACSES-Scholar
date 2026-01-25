@@ -11,8 +11,10 @@ type NavItem = { href: string; label: string; badge?: string; external?: boolean
 
 const NAV: NavItem[] = [
   { href: "/services", label: "Services" },
-  { href: "/projects", label: "Ecosystem" },
+  { href: "/projects", label: "Projects" },
   { href: "/academy", label: "Academy", badge: "Beta" },
+  { href: "/ecosystem", label: "Ecosystem" },
+
   // Scholar alohida bo‘lsa:
   // { href: "https://scholar.acses.uz", label: "Scholar", external: true },
 ];

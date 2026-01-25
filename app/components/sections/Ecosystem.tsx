@@ -1,6 +1,6 @@
 import { Container } from "../layout/Container";
 import Link from "next/link";
-import projects from "@/app/content/projects.json";
+import ecosystem from "@/app/content/ecosystem.json";
 
 
 export function Ecosystem() {
@@ -13,10 +13,10 @@ export function Ecosystem() {
                 </p>
 
                 <div className="mt-8 grid gap-4 md:grid-cols-3">
-                    {projects.map((p) => (
+                    {ecosystem.map((p) => (
                         <Link
                             key={p.slug}
-                            href={`/projects/${p.slug}`}
+                            href={`/ecosystem/${p.slug}`}
                             className="ac-card ac-card-hover group p-6"
                         >
                             <div className="flex items-center justify-between">
@@ -26,7 +26,7 @@ export function Ecosystem() {
                                 </div>
                             </div>
                             <div className="mt-2 text-sm text-muted-foreground">{p.tagline}</div>
-                            <div className="mt-4 text-xs text-muted-foreground/60">{p.type}</div>
+                            <div className="mt-4 text-xs text-muted-foreground/60">{p.category}</div>
                             <div className="mt-5 text-sm text-muted-foreground group-hover:text-foreground">
                                 Open →
                             </div>

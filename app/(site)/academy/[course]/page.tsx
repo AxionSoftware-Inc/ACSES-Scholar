@@ -7,45 +7,55 @@ export function generateStaticParams() {
   return courses.map((c) => ({ course: c.slug }));
 }
 
-export default function CoursePage({ params }: { params: { course: string } }) {
-  const c = courses.find((x) => x.slug === params.course);
+export default async function CoursePage({ params }: { params: Promise<{ course: string }> }) {
+  const { course } = await params;
+  const c = courses.find((x) => x.slug === course);
   if (!c) return notFound();
 
   return (
     <main className="py-14 md:py-20">
       <Container>
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{c.title}</h1>
-          <div className="rounded-full border border-border/10 px-3 py-1 text-sm text-muted-foreground">
-            {c.level}
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="ac-chip">{c.category}</span>
+              <span className="ac-chip">{c.level}</span>
+            </div>
+            <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-5xl">{c.title}</h1>
           </div>
         </div>
 
-        <p className="mt-4 max-w-3xl text-sm text-muted-foreground">
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           {c.description}
         </p>
 
-        <div className="mt-8 rounded-3xl border border-border/10 bg-card p-6">
-          <div className="text-sm font-medium">Lessons</div>
-          <div className="mt-4 space-y-2">
-            {c.lessons.map((l) => (
+        <div className="mt-10">
+          <div className="text-sm font-semibold text-foreground">Curriculum</div>
+          <div className="mt-4 grid gap-3">
+            {c.lessons.map((l, idx) => (
               <Link
                 key={l.slug}
                 href={`/academy/${c.slug}/${l.slug}`}
-                className="block rounded-2xl border border-border/10 px-4 py-3 text-sm hover:border-border/30 hover:bg-muted/50"
+                className="ac-card group flex items-center justify-between p-4 hover:bg-muted/30 transition-all active:scale-[99%]"
               >
-                {l.title}
+                <div className="flex items-center gap-4">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground group-hover:bg-foreground group-hover:text-background transition-colors">
+                    {idx + 1}
+                  </span>
+                  <span className="font-medium text-foreground">{l.title}</span>
+                </div>
+                <span className="text-muted-foreground group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             ))}
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-10">
           <Link
             href="/academy"
-            className="ac-btn border border-border/20 bg-background/50 hover:bg-muted"
+            className="text-sm text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
           >
-            Back to courses
+            ← Back to courses
           </Link>
         </div>
       </Container>

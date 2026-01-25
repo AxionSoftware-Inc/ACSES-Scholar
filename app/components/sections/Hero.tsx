@@ -6,8 +6,8 @@ export function Hero() {
     <section className="relative overflow-hidden">
       {/* background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-black/10 blur-3xl dark:bg-white/10" />
-        <div className="absolute -bottom-40 right-0 h-[420px] w-[420px] rounded-full bg-black/5 blur-3xl dark:bg-white/5" />
+        <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-40 right-0 h-[420px] w-[420px] rounded-full bg-accent/20 blur-3xl" />
       </div>
 
       <Container>

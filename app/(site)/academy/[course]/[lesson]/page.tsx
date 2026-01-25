@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "../../../../components/layout/Container";
 import courses from "../../../../content/courses.json";
@@ -10,17 +11,24 @@ export function generateStaticParams() {
   return params;
 }
 
-export default function LessonPage({ params }: { params: { course: string; lesson: string } }) {
-  const c = courses.find((x) => x.slug === params.course);
-  const l = c?.lessons.find((x) => x.slug === params.lesson);
+export default async function LessonPage({ params }: { params: Promise<{ course: string; lesson: string }> }) {
+  const { course, lesson } = await params;
+  const c = courses.find((x) => x.slug === course);
+  const l = c?.lessons.find((x) => x.slug === lesson);
   if (!c || !l) return notFound();
 
   return (
     <main className="py-14 md:py-20">
       <Container>
-        <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">{l.title}</h1>
+        <Link
+          href={`/academy/${c.slug}`}
+          className="mb-6 inline-flex text-sm text-muted-foreground hover:text-foreground no-underline hover:underline underline-offset-4"
+        >
+          ← {c.title}
+        </Link>
+        <h1 className="text-2xl font-bold tracking-tight text-foreground md:text-4xl">{l.title}</h1>
 
-        <div className="mt-6 overflow-hidden rounded-3xl border border-black/10 dark:border-white/10">
+        <div className="mt-8 overflow-hidden rounded-xl border border-border bg-black shadow-lg">
           <div className="aspect-video w-full">
             <iframe
               className="h-full w-full"
