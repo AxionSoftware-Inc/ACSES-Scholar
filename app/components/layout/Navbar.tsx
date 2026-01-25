@@ -14,6 +14,8 @@ const NAV: NavItem[] = [
   { href: "/projects", label: "Projects" },
   { href: "/academy", label: "Academy", badge: "Beta" },
   { href: "/ecosystem", label: "Ecosystem" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 
   // Scholar alohida bo‘lsa:
   // { href: "https://scholar.acses.uz", label: "Scholar", external: true },
