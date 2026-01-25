@@ -15,15 +15,21 @@ export function Services() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
           {services.map((s) => (
             <div
-              key={s.title}
-              className="ac-card p-6"
+              key={s.slug}
+              className="ac-card flex flex-col justify-between p-6"
             >
-              <div className="text-lg font-semibold">{s.title}</div>
-              <div className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {s.desc}
+              <div>
+                <div className="text-lg font-semibold">{s.name}</div>
+                <div className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {s.tagline}
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                <span className="ac-badge bg-muted/50">{s.category}</span>
               </div>
             </div>
           ))}
