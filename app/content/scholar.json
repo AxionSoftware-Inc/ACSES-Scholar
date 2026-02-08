@@ -5,40 +5,86 @@
             "title": "7-sinf",
             "subjects": [
                 {
-                    "id": "algebra-7",
-                    "title": "Algebra",
+                    "id": "matematika-7",
+                    "title": "Matematika",
+                    "color": "blue",
                     "lessons": [
                         {
-                            "id": "alg-7-1",
+                            "id": "mat-7-1",
                             "title": "1-dars. Chiziqli tenglamalar",
-                            "youtubeId": "Lg-w6X9D8as"
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Chiziqli tenglamalar va ularning xossalari haqida umumiy tushuncha.",
+                            "duration": "15:20"
                         },
                         {
-                            "id": "alg-7-2",
+                            "id": "mat-7-2",
                             "title": "2-dars. Bir hadlar va ko'p hadlar",
-                            "youtubeId": "Lg-w6X9D8as"
-                        }
-                    ]
-                },
-                {
-                    "id": "geo-7",
-                    "title": "Geometriya",
-                    "lessons": [
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Birhadlar ustida amallar va ko'phadlarni soddalashtirish.",
+                            "duration": "12:45"
+                        },
                         {
-                            "id": "geo-7-1",
-                            "title": "1-dars. Boshlang'ich tushunchalar",
-                            "youtubeId": "Lg-w6X9D8as"
+                            "id": "mat-7-3",
+                            "title": "3-dars. Qisqa ko'paytirish formulalari",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Kvadratlar ayirmasi va yig'indining kvadrati formulalari.",
+                            "duration": "18:10"
+                        },
+                        {
+                            "id": "mat-7-4",
+                            "title": "4-dars. Ko'phadlarni ko'paytuvchilarga ajratish",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Umumiy ko'paytuvchini qavsdan tashqariga chiqarish usullari.",
+                            "duration": "14:30"
+                        },
+                        {
+                            "id": "mat-7-5",
+                            "title": "5-dars. Ratsional kasrlar",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Ratsional kasrlar ustida to'rt amalni bajarish.",
+                            "duration": "20:05"
                         }
                     ]
                 },
                 {
-                    "id": "physics-7",
+                    "id": "fizika-7",
                     "title": "Fizika",
+                    "color": "orange",
                     "lessons": [
                         {
-                            "id": "phys-7-1",
+                            "id": "fiz-7-1",
                             "title": "1-dars. Fizika faniga kirish",
-                            "youtubeId": "Lg-w6X9D8as"
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Fizika fani nimani o'rganadi? Tabiat hodisalari.",
+                            "duration": "10:15"
+                        },
+                        {
+                            "id": "fiz-7-2",
+                            "title": "2-dars. To'g'ri chiziqli harakat",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Mexanik harakat turlari va traektoriya.",
+                            "duration": "13:40"
+                        },
+                        {
+                            "id": "fiz-7-3",
+                            "title": "3-dars. Tezlik va tezlanish",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Tezlik birliklari va o'rtacha tezlikni hisoblash.",
+                            "duration": "16:25"
+                        },
+                        {
+                            "id": "fiz-7-4",
+                            "title": "4-dars. Nyuton qonunlari",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Inertsiya qonuni va kuch - harakat sababchisi sifatida.",
+                            "duration": "19:50"
+                        },
+                        {
+                            "id": "fiz-7-5",
+                            "title": "5-dars. Butun olam tortishish qonuni",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Gravitatsiya kuchi va og'irlik kuchi haqida tushuncha.",
+                            "duration": "14:10"
                         }
                     ]
                 }
@@ -49,20 +95,88 @@
             "title": "8-sinf",
             "subjects": [
                 {
-                    "id": "algebra-8",
-                    "title": "Algebra",
+                    "id": "matematika-8",
+                    "title": "Matematika",
+                    "color": "blue",
                     "lessons": [
                         {
-                            "id": "alg-8-1",
+                            "id": "mat-8-1",
                             "title": "1-dars. Kvadrat ildizlar",
-                            "youtubeId": "Lg-w6X9D8as"
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Kvadrat ildiz tushunchasi va uning xossalari.",
+                            "duration": "17:30"
+                        },
+                        {
+                            "id": "mat-8-2",
+                            "title": "2-dars. Kvadrat tenglamalar",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "To'la va to'la bo'lmagan kvadrat tenglamalar.",
+                            "duration": "22:15"
+                        },
+                        {
+                            "id": "mat-8-3",
+                            "title": "3-dars. Kvadratik funksiya",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "y = ax^2 + bx + c funksiyaning grafigi.",
+                            "duration": "19:40"
+                        },
+                        {
+                            "id": "mat-8-4",
+                            "title": "4-dars. Tengsizliklar",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Kvadrat tengsizliklarni intervallar usulida yechish.",
+                            "duration": "16:10"
+                        },
+                        {
+                            "id": "mat-8-5",
+                            "title": "5-dars. Taqribiy hisoblashlar",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Xatoliklar nazariyasi asoslari.",
+                            "duration": "12:50"
                         }
                     ]
                 },
                 {
-                    "id": "physics-8",
+                    "id": "fizika-8",
                     "title": "Fizika",
-                    "lessons": []
+                    "color": "orange",
+                    "lessons": [
+                        {
+                            "id": "fiz-8-1",
+                            "title": "1-dars. Issiqlik miqdori",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Moddaning ichki energiyasi va issiqlik mustahkamligi.",
+                            "duration": "14:20"
+                        },
+                        {
+                            "id": "fiz-8-2",
+                            "title": "2-dars. Yonilg'ining yonish issiqligi",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Yonilg'i turlari va ularning issiqlik berish qobiliyati.",
+                            "duration": "11:35"
+                        },
+                        {
+                            "id": "fiz-8-3",
+                            "title": "3-dars. Agregat holatlar",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Qattiq, suyuq va gaz holatlarining o'zgarishi.",
+                            "duration": "18:50"
+                        },
+                        {
+                            "id": "fiz-8-4",
+                            "title": "4-dars. Bug'lanish va kondensatsiya",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Namlik va uning o'lchash asboblari.",
+                            "duration": "15:15"
+                        },
+                        {
+                            "id": "fiz-8-5",
+                            "title": "5-dars. Erish va qotish",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Solishtirma erish issiqligi haqida tushuncha.",
+                            "duration": "13:45"
+                        }
+                    ]
                 }
             ]
         },
@@ -71,14 +185,88 @@
             "title": "9-sinf",
             "subjects": [
                 {
-                    "id": "algebra-9",
-                    "title": "Algebra",
-                    "lessons": []
+                    "id": "matematika-9",
+                    "title": "Matematika",
+                    "color": "blue",
+                    "lessons": [
+                        {
+                            "id": "mat-9-1",
+                            "title": "1-dars. Trigonometriya asoslari",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Burchakning radiandagi o'lchovi.",
+                            "duration": "18:20"
+                        },
+                        {
+                            "id": "mat-9-2",
+                            "title": "2-dars. Sinus va kosinuslar",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Trigonometrik doira va asosiy tushunchalar.",
+                            "duration": "20:45"
+                        },
+                        {
+                            "id": "mat-9-3",
+                            "title": "3-dars. Trigonometrik ayniyatlar",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Asosiy trigonometrik ayniyatlarni isbotlash.",
+                            "duration": "17:30"
+                        },
+                        {
+                            "id": "mat-9-4",
+                            "title": "4-dars. Keltirish formulalari",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Burchaklarni 90, 180, 270 darajaga keltirish.",
+                            "duration": "19:10"
+                        },
+                        {
+                            "id": "mat-9-5",
+                            "title": "5-dars. Arifmetik progressiya",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Progressiya formulalari va yig'indini hisoblash.",
+                            "duration": "22:05"
+                        }
+                    ]
                 },
                 {
-                    "id": "physics-9",
+                    "id": "fizika-9",
                     "title": "Fizika",
-                    "lessons": []
+                    "color": "orange",
+                    "lessons": [
+                        {
+                            "id": "fiz-9-1",
+                            "title": "1-dars. Kinematika asoslari",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Tezlanuvchan harakat va yo'lni hisoblash.",
+                            "duration": "16:30"
+                        },
+                        {
+                            "id": "fiz-9-2",
+                            "title": "2-dars. Dinamika asoslari",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Nyutonning ikkinchi qonuni va kuchlar yig'indisi.",
+                            "duration": "18:45"
+                        },
+                        {
+                            "id": "fiz-9-3",
+                            "title": "3-dars. Saqlanish qonunlari",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Impuls va energiya saqlanishi.",
+                            "duration": "15:20"
+                        },
+                        {
+                            "id": "fiz-9-4",
+                            "title": "4-dars. Suyuqlik va gazlar mexanikasi",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Bernulli qonuni va Arximed kuchi.",
+                            "duration": "14:55"
+                        },
+                        {
+                            "id": "fiz-9-5",
+                            "title": "5-dars. Mexanik tebranishlar",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Garmonik tebranishlar va to'lqin harakati.",
+                            "duration": "17:15"
+                        }
+                    ]
                 }
             ]
         },
@@ -87,14 +275,88 @@
             "title": "10-sinf",
             "subjects": [
                 {
-                    "id": "algebra-10",
-                    "title": "Algebra",
-                    "lessons": []
+                    "id": "matematika-10",
+                    "title": "Matematika",
+                    "color": "blue",
+                    "lessons": [
+                        {
+                            "id": "mat-10-1",
+                            "title": "1-dars. Funksiya va uning xossalari",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Funksiyaning aniqlanish va qiymatlar sohasi.",
+                            "duration": "21:10"
+                        },
+                        {
+                            "id": "mat-10-2",
+                            "title": "2-dars. Teskari funksiya",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Funksiyaning monotonligi va teskarilanuvchanligi.",
+                            "duration": "19:35"
+                        },
+                        {
+                            "id": "mat-10-3",
+                            "title": "3-dars. Darajali funksiya",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "y = x^n funksiyaning xossalari va grafigi.",
+                            "duration": "18:50"
+                        },
+                        {
+                            "id": "mat-10-4",
+                            "title": "4-dars. Ko'rsatkichli funksiya",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "y = a^x funksiyasi va uning xossalari.",
+                            "duration": "20:25"
+                        },
+                        {
+                            "id": "mat-10-5",
+                            "title": "5-dars. Logarifmik funksiya",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "y = log_a(x) funksiyasi va logarifmik ayniyatlar.",
+                            "duration": "23:45"
+                        }
+                    ]
                 },
                 {
-                    "id": "physics-10",
+                    "id": "fizika-10",
                     "title": "Fizika",
-                    "lessons": []
+                    "color": "orange",
+                    "lessons": [
+                        {
+                            "id": "fiz-10-1",
+                            "title": "1-dars. Molekulyar fizika",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "MKT asosiy tenglamasi va ideal gaz.",
+                            "duration": "19:20"
+                        },
+                        {
+                            "id": "fiz-10-2",
+                            "title": "2-dars. Termodinamika asoslari",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Termodinamikaning birinchi va ikkinchi qonunlari.",
+                            "duration": "21:15"
+                        },
+                        {
+                            "id": "fiz-10-3",
+                            "title": "3-dars. Elektrostatika",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Kulon qonuni va elektr maydon kuchlanganligi.",
+                            "duration": "20:40"
+                        },
+                        {
+                            "id": "fiz-10-4",
+                            "title": "4-dars. O'zgarmas tok",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Om qonuni va Kirxgof qoidalari.",
+                            "duration": "18:55"
+                        },
+                        {
+                            "id": "fiz-10-5",
+                            "title": "5-dars. Turli muhitlarda elektr toki",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Elektroliz va gazlarda razryadlar.",
+                            "duration": "17:35"
+                        }
+                    ]
                 }
             ]
         },
@@ -103,14 +365,88 @@
             "title": "11-sinf",
             "subjects": [
                 {
-                    "id": "algebra-11",
-                    "title": "Algebra",
-                    "lessons": []
+                    "id": "matematika-11",
+                    "title": "Matematika",
+                    "color": "blue",
+                    "lessons": [
+                        {
+                            "id": "mat-11-1",
+                            "title": "1-dars. Hosila va uning tatbiqi",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Funksiya hosilasi va differensiallash qoidalari.",
+                            "duration": "25:30"
+                        },
+                        {
+                            "id": "mat-11-2",
+                            "title": "2-dars. Boshlang'ich funksiya",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Boshlang'ich funksiyaning umumiy ko'rinishi.",
+                            "duration": "22:45"
+                        },
+                        {
+                            "id": "mat-11-3",
+                            "title": "3-dars. Integral",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Aniqmas va aniq integral, Nyuton-Leybnis formulasi.",
+                            "duration": "24:15"
+                        },
+                        {
+                            "id": "mat-11-4",
+                            "title": "4-dars. Kombinatorika elementlari",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "O'rinlashtirish, guruhlash va o'rin almashtirish.",
+                            "duration": "20:50"
+                        },
+                        {
+                            "id": "mat-11-5",
+                            "title": "5-dars. Ehtimollar nazariyasi",
+                            "youtubeId": "WXBHCQYxwr0",
+                            "description": "Ehtimollikning klassik va geometrik ta'rifi.",
+                            "duration": "21:55"
+                        }
+                    ]
                 },
                 {
-                    "id": "physics-11",
+                    "id": "fizika-11",
                     "title": "Fizika",
-                    "lessons": []
+                    "color": "orange",
+                    "lessons": [
+                        {
+                            "id": "fiz-11-1",
+                            "title": "1-dars. Magnit maydon",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Amper kuchi va Lorents kuchi.",
+                            "duration": "19:40"
+                        },
+                        {
+                            "id": "fiz-11-2",
+                            "title": "2-dars. Elektromagnit induksiya",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Faradey qonuni va Lens qoidasi.",
+                            "duration": "21:10"
+                        },
+                        {
+                            "id": "fiz-11-3",
+                            "title": "3-dars. Tebranishlar va to'lqinlar",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Elektromagnit tebranishlar va radioaloqa.",
+                            "duration": "23:50"
+                        },
+                        {
+                            "id": "fiz-11-4",
+                            "title": "4-dars. Optika",
+                            "youtubeId": "Y-T80F6U7Yk",
+                            "description": "Yorug'likning sinishi va dispersiyasi.",
+                            "duration": "22:15"
+                        },
+                        {
+                            "id": "fiz-11-5",
+                            "title": "5-dars. Atom va yadro fizikasi",
+                            "youtubeId": "X1DRg4W7PIk",
+                            "description": "Radioaktiv yemirilish qonuni va yadro reaksiyalari.",
+                            "duration": "26:45"
+                        }
+                    ]
                 }
             ]
         }

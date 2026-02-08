@@ -36,18 +36,29 @@ export default async function ClassPage(props: { params: Promise<{ classId: stri
                             <Link
                                 key={subject.id}
                                 href={`/classes/${classData.id}/${subject.id}`}
-                                className="ac-card group flex flex-col justify-between p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:bg-muted/10 cursor-pointer"
+                                className="ac-card group flex flex-col justify-between p-8 transition-all hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 cursor-pointer bg-gradient-to-br from-card to-muted/20"
                             >
                                 <div>
-                                    <h3 className="text-2xl font-semibold group-hover:text-primary transition-colors">
+                                    <div className={`w-12 h-12 rounded-2xl mb-6 flex items-center justify-center text-white shadow-lg ${subject.id.includes('matematika') ? 'bg-blue-600' :
+                                            subject.id.includes('fizika') ? 'bg-orange-600' : 'bg-primary'
+                                        }`}>
+                                        <span className="text-xl font-bold">{subject.title[0]}</span>
+                                    </div>
+                                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
                                         {subject.title}
                                     </h3>
-                                    <p className="mt-2 text-sm text-muted-foreground">
-                                        {subject.lessons.length} ta dars mavjud
+                                    <div className="mt-4 flex items-center gap-2">
+                                        <span className="ac-badge bg-primary/10 text-primary border-primary/20">
+                                            {subject.lessons.length} ta dars
+                                        </span>
+                                        <span className="text-xs text-muted-foreground">Video kurs</span>
+                                    </div>
+                                    <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                                        {classData.title} uchun {subject.title.toLowerCase()} fanidan barcha video darslar to&apos;plami.
                                     </p>
                                 </div>
-                                <div className="mt-6 flex items-center text-sm font-medium text-primary">
-                                    Fanni tanlash &rarr;
+                                <div className="mt-8 flex items-center gap-2 text-sm font-bold text-primary group-hover:translate-x-1 transition-transform">
+                                    Kursni boshlash <span className="text-lg">→</span>
                                 </div>
                             </Link>
                         ))}
