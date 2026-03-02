@@ -1,6 +1,6 @@
-import { Container } from "../../components/layout/Container";
+import { Container } from "@/app/components/layout/Container";
 import Link from "next/link";
-import scholarData from "../../content/scholar.json";
+import scholarData from "@/app/content/scholar.json";
 
 export default function ClassesPage() {
     return (
