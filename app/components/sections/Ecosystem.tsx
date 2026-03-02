@@ -18,7 +18,7 @@ const benefits = [
 
 export function Ecosystem() {
     return (
-        <section className="py-14 md:py-20 bg-muted/30" id="about">
+        <section className="py-14 md:py-20 bg-muted/30" id="about-section">
             <Container>
                 <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Nega aynan ACSES Scholar?</h2>
                 <p className="mt-2 max-w-2xl text-sm text-muted-foreground">

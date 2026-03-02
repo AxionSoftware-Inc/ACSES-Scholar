@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 import { PlayCircle } from "lucide-react";
 
 type Lesson = {
@@ -13,23 +13,14 @@ type Lesson = {
 
 interface LessonPlayerProps {
     lessons: Lesson[];
+    classId: string;
+    subjectId: string;
+    activeLessonId?: string;
 }
 
-export function LessonPlayer({ lessons }: LessonPlayerProps) {
-    const searchParams = useSearchParams();
-    const router = useRouter();
-    const pathname = usePathname();
-
-    const lessonId = searchParams.get("lesson");
-
-    const activeLesson = (lessonId ? lessons.find(l => l.id === lessonId) : null) ||
+export function LessonPlayer({ lessons, classId, subjectId, activeLessonId }: LessonPlayerProps) {
+    const activeLesson = (activeLessonId ? lessons.find(l => l.id === activeLessonId) : null) ||
         (lessons.length > 0 ? lessons[0] : null);
-
-    const handleLessonSelect = (lesson: Lesson) => {
-        const params = new URLSearchParams(searchParams.toString());
-        params.set("lesson", lesson.id);
-        router.push(`${pathname}?${params.toString()}`, { scroll: false });
-    };
 
     if (lessons.length === 0) {
         return (
@@ -57,13 +48,13 @@ export function LessonPlayer({ lessons }: LessonPlayerProps) {
                             />
                         </div>
                         <div className="p-8 bg-card">
-                            <div className="flex items-center gap-3 mb-4">
+                            <div className="flex items-center gap-3 mb-4" id="lesson-content">
                                 <span className="ac-badge bg-primary/10 text-primary border-primary/20">Video Dars</span>
                                 {activeLesson.duration && (
                                     <span className="text-xs text-muted-foreground font-medium">{activeLesson.duration}</span>
                                 )}
                             </div>
-                            <h2 className="text-2xl font-bold md:text-3xl tracking-tight">{activeLesson.title}</h2>
+                            <h2 className="text-2xl font-bold md:text-3xl tracking-tight text-foreground">{activeLesson.title}</h2>
                             {activeLesson.description && (
                                 <p className="mt-4 text-muted-foreground leading-relaxed">
                                     {activeLesson.description}
@@ -76,7 +67,7 @@ export function LessonPlayer({ lessons }: LessonPlayerProps) {
 
             {/* Playlist Section */}
             <div className="flex flex-col gap-4 lg:h-[calc(100vh-200px)]">
-                <div className="flex items-center justify-between px-1">
+                <div className="flex items-center justify-between px-1 text-foreground">
                     <h3 className="text-xl font-bold">Darslar ro&apos;yxati</h3>
                     <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded-md">
                         {lessons.length} ta mavzu
@@ -86,10 +77,13 @@ export function LessonPlayer({ lessons }: LessonPlayerProps) {
                 <div className="grid gap-3 overflow-y-auto pr-2 custom-scrollbar">
                     {lessons.map((lesson, index) => {
                         const isActive = activeLesson?.id === lesson.id;
+                        const lessonUrl = `/classes/${classId}/${subjectId}/${lesson.id}`;
+
                         return (
-                            <button
+                            <Link
                                 key={lesson.id}
-                                onClick={() => handleLessonSelect(lesson)}
+                                href={lessonUrl}
+                                scroll={false}
                                 className={`
                                     group flex flex-col gap-2 rounded-2xl border p-4 text-left transition-all duration-300
                                     ${isActive
@@ -128,7 +122,7 @@ export function LessonPlayer({ lessons }: LessonPlayerProps) {
                                         </div>
                                     )}
                                 </div>
-                            </button>
+                            </Link>
                         );
                     })}
                 </div>
@@ -136,3 +130,4 @@ export function LessonPlayer({ lessons }: LessonPlayerProps) {
         </div>
     );
 }
+

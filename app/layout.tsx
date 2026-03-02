@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Software • Academy • Lab",
 };
 
+export const revalidate = 3600;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="uz" className={inter.variable} suppressHydrationWarning>

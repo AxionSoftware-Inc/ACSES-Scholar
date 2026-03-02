@@ -27,14 +27,14 @@ export function Hero() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="#classes"
+                href="/classes"
                 className="ac-btn bg-foreground text-background hover:opacity-90 dark:bg-foreground dark:text-background"
               >
                 Darslarni boshlash
               </Link>
 
               <Link
-                href="#about"
+                href="/about"
                 className="ac-btn border border-border/20 bg-background/50 hover:bg-muted"
               >
                 Batafsil ma&apos;lumot
@@ -66,13 +66,15 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Use a remote image for now */}
-              <img
-                src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1600&q=80"
-                alt="ACSES Scholar"
-                className="h-72 w-full object-cover md:h-80"
-                loading="lazy"
-              />
+              {/* Use Next.js Image component for optimization */}
+              <div className="relative h-72 w-full md:h-80">
+                <img
+                  src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1600&q=80"
+                  alt="ACSES Scholar"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import scholarData from "@/app/content/scholar.json";
 
 export function Services() {
   return (
-    <section id="classes" className="py-14 md:py-20">
+    <section id="classes-section" className="py-14 md:py-20">
       <Container>
         <div className="flex items-end justify-between gap-6">
           <div>

@@ -67,17 +67,17 @@ export function Footer() {
               </div>
               <ul className="mt-4 space-y-2">
                 <li>
-                  <Link href="#classes" className="text-sm text-muted-foreground hover:text-foreground">
+                  <Link href="/classes" className="text-sm text-muted-foreground hover:text-foreground">
                     Sinflar
                   </Link>
                 </li>
                 <li>
-                  <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground">
+                  <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground">
                     Biz haqimizda
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="text-sm text-muted-foreground hover:text-foreground">
+                  <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">
                     Aloqa
                   </Link>
                 </li>
@@ -86,7 +86,7 @@ export function Footer() {
               {/* Mini CTA */}
               <div className="mt-6">
                 <Link
-                  href="#classes"
+                  href="/classes"
                   className="ac-btn bg-foreground text-background hover:opacity-90 dark:bg-foreground dark:text-background"
                 >
                   O&apos;qishni boshlash
@@ -100,17 +100,17 @@ export function Footer() {
               </div>
               <ul className="mt-4 space-y-2">
                 <li>
-                  <Link href="#classes" className="text-sm text-muted-foreground hover:text-foreground">
+                  <Link href="/classes" className="text-sm text-muted-foreground hover:text-foreground">
                     Video Darslar
                   </Link>
                 </li>
                 <li>
-                  <Link href="#classes" className="text-sm text-muted-foreground hover:text-foreground">
+                  <Link href="/classes" className="text-sm text-muted-foreground hover:text-foreground">
                     Fizika
                   </Link>
                 </li>
                 <li>
-                  <Link href="#classes" className="text-sm text-muted-foreground hover:text-foreground">
+                  <Link href="/classes" className="text-sm text-muted-foreground hover:text-foreground">
                     Matematika
                   </Link>
                 </li>

@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { LessonPlayer } from "@/app/components/features/LessonPlayer";
 
+import { Suspense } from "react";
+
 export async function generateStaticParams() {
     const paths = [];
     for (const c of scholarData.classes) {
@@ -31,6 +33,8 @@ export default async function SubjectPage(props: { params: Promise<{ classId: st
     // but for now we just list them.
     // Or better: Show a "Featured Lesson" or "Start Learning" button.
 
+    const activeLesson = subjectData.lessons[0];
+
     return (
         <main className="min-h-screen pt-20 pb-16">
             <Container>
@@ -53,7 +57,14 @@ export default async function SubjectPage(props: { params: Promise<{ classId: st
                     </div>
 
                     <div className="mt-6">
-                        <LessonPlayer lessons={subjectData.lessons} />
+                        <Suspense fallback={<div className="animate-pulse bg-muted h-[400px] rounded-2xl" />}>
+                            <LessonPlayer
+                                lessons={subjectData.lessons}
+                                classId={classData.id}
+                                subjectId={subjectData.id}
+                                activeLessonId={activeLesson?.id}
+                            />
+                        </Suspense>
                     </div>
                 </div>
             </Container>
