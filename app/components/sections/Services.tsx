@@ -1,8 +1,10 @@
 import { Container } from "../layout/Container";
 import Link from "next/link";
-import scholarData from "@/app/content/scholar.json";
+import { getCatalog } from "@/lib/catalog";
 
-export function Services() {
+export async function Services() {
+  const classes = await getCatalog();
+
   return (
     <section id="classes-section" className="py-14 md:py-20">
       <Container>
@@ -16,7 +18,7 @@ export function Services() {
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {scholarData.classes.map((s) => (
+          {classes.map((s) => (
             <Link
               href={`/classes/${s.id}`}
               key={s.id}
@@ -29,7 +31,7 @@ export function Services() {
                 </div>
                 <div className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   <span className="font-medium text-foreground">Fanlar:</span>{" "}
-                  {s.subjects.map(sub => sub.title).join(", ")}
+                  {s.subjects.map((sub) => sub.title).join(", ")}
                 </div>
               </div>
 

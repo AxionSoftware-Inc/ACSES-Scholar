@@ -1,17 +1,12 @@
 import { Container } from "@/app/components/layout/Container";
-import scholarData from "@/app/content/scholar.json";
+import { getCatalog } from "@/lib/catalog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-    return scholarData.classes.map((c) => ({
-        classId: c.id,
-    }));
-}
-
 export default async function ClassPage(props: { params: Promise<{ classId: string }> }) {
     const params = await props.params;
-    const classData = scholarData.classes.find((c) => c.id === params.classId);
+    const classes = await getCatalog();
+    const classData = classes.find((c) => c.id === params.classId);
 
     if (!classData) {
         notFound();
@@ -39,8 +34,8 @@ export default async function ClassPage(props: { params: Promise<{ classId: stri
                                 className="ac-card group flex flex-col justify-between p-8 transition-all hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 cursor-pointer bg-gradient-to-br from-card to-muted/20"
                             >
                                 <div>
-                                    <div className={`w-12 h-12 rounded-2xl mb-6 flex items-center justify-center text-white shadow-lg ${subject.id.includes('matematika') ? 'bg-blue-600' :
-                                            subject.id.includes('fizika') ? 'bg-orange-600' : 'bg-primary'
+                                    <div className={`w-12 h-12 rounded-2xl mb-6 flex items-center justify-center text-white shadow-lg ${subject.id.includes("matematika") ? "bg-blue-600" :
+                                            subject.id.includes("fizika") ? "bg-orange-600" : "bg-primary"
                                         }`}>
                                         <span className="text-xl font-bold">{subject.title[0]}</span>
                                     </div>
@@ -58,7 +53,7 @@ export default async function ClassPage(props: { params: Promise<{ classId: stri
                                     </p>
                                 </div>
                                 <div className="mt-8 flex items-center gap-2 text-sm font-bold text-primary group-hover:translate-x-1 transition-transform">
-                                    Kursni boshlash <span className="text-lg">→</span>
+                                    Kursni boshlash <span className="text-lg">&rarr;</span>
                                 </div>
                             </Link>
                         ))}

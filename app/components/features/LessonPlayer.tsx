@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { PlayCircle } from "lucide-react";
+import { useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type Lesson = {
     "id": string;
@@ -29,6 +31,16 @@ export function LessonPlayer({ lessons, classId, subjectId, activeLessonId }: Le
             </div>
         );
     }
+
+    useEffect(() => {
+        if (!activeLesson) return;
+        void trackEvent({
+            event_type: "lesson_open",
+            path: `/classes/${classId}/${subjectId}/${activeLesson.id}`,
+            label: `${classId}:${subjectId}`,
+            metadata: { lesson_id: activeLesson.id, lesson_title: activeLesson.title },
+        });
+    }, [activeLesson, classId, subjectId]);
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

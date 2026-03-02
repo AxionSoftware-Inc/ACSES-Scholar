@@ -1,29 +1,14 @@
 import { Container } from "@/app/components/layout/Container";
-import scholarData from "@/app/content/scholar.json";
+import { getCatalog } from "@/lib/catalog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { LessonPlayer } from "@/app/components/features/LessonPlayer";
 
-export async function generateStaticParams() {
-    const paths = [];
-    for (const c of scholarData.classes) {
-        for (const s of c.subjects) {
-            for (const l of s.lessons) {
-                paths.push({
-                    classId: c.id,
-                    subjectId: s.id,
-                    lessonId: l.id
-                })
-            }
-        }
-    }
-    return paths;
-}
-
 export default async function LessonPage(props: { params: Promise<{ classId: string; subjectId: string; lessonId: string }> }) {
     const params = await props.params;
-    const classData = scholarData.classes.find((c) => c.id === params.classId);
+    const classes = await getCatalog();
+    const classData = classes.find((c) => c.id === params.classId);
     const subjectData = classData?.subjects.find((s) => s.id === params.subjectId);
     const lessonData = subjectData?.lessons.find((l) => l.id === params.lessonId);
 
@@ -43,7 +28,7 @@ export default async function LessonPage(props: { params: Promise<{ classId: str
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/10 pb-6">
                         <div>
                             <div className="text-sm font-medium text-primary mb-1">
-                                {classData.title} • {subjectData.title}
+                                {classData.title} - {subjectData.title}
                             </div>
                             <h1 className="text-4xl font-bold tracking-tight">{lessonData.title}</h1>
                         </div>

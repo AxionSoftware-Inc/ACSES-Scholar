@@ -1,5 +1,5 @@
 import { Container } from "@/app/components/layout/Container";
-import scholarData from "@/app/content/scholar.json";
+import { getCatalog } from "@/lib/catalog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -7,31 +7,15 @@ import { LessonPlayer } from "@/app/components/features/LessonPlayer";
 
 import { Suspense } from "react";
 
-export async function generateStaticParams() {
-    const paths = [];
-    for (const c of scholarData.classes) {
-        for (const s of c.subjects) {
-            paths.push({
-                classId: c.id,
-                subjectId: s.id
-            })
-        }
-    }
-    return paths;
-}
-
 export default async function SubjectPage(props: { params: Promise<{ classId: string; subjectId: string }> }) {
     const params = await props.params;
-    const classData = scholarData.classes.find((c) => c.id === params.classId);
+    const classes = await getCatalog();
+    const classData = classes.find((c) => c.id === params.classId);
     const subjectData = classData?.subjects.find((s) => s.id === params.subjectId);
 
     if (!classData || !subjectData) {
         notFound();
     }
-
-    // Assuming the first lesson is the featured one if no specific lesson is selected, 
-    // but for now we just list them.
-    // Or better: Show a "Featured Lesson" or "Start Learning" button.
 
     const activeLesson = subjectData.lessons[0];
 

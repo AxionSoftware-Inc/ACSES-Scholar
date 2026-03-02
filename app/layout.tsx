@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { ThemeProvider } from "./providers";
+import { AnalyticsTracker } from "./components/analytics/Tracker";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           enableSystem
           disableTransitionOnChange
         >
+          <AnalyticsTracker />
           <Navbar />
           {children}
           <Footer />

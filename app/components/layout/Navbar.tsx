@@ -12,6 +12,7 @@ type NavItem = { href: string; label: string; badge?: string; external?: boolean
 const NAV: NavItem[] = [
   { href: "/", label: "Bosh Sahifa" },
   { href: "/classes", label: "Sinflar" },
+  { href: "/admin-panel", label: "Admin" },
   { href: "/about", label: "Biz haqimizda" },
   { href: "/contact", label: "Aloqa" },
 ];

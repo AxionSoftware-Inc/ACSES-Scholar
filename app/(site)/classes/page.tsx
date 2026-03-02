@@ -1,12 +1,13 @@
 import { Container } from "@/app/components/layout/Container";
 import Link from "next/link";
-import scholarData from "@/app/content/scholar.json";
+import { getCatalog } from "@/lib/catalog";
 
-export default function ClassesPage() {
+export default async function ClassesPage() {
+    const classes = await getCatalog();
+
     return (
         <main className="py-14 md:py-20">
             <Container>
-                {/* Header */}
                 <div className="max-w-3xl">
                     <div className="flex items-center gap-2">
                         <span className="ac-chip">ACSES Media</span>
@@ -19,9 +20,8 @@ export default function ClassesPage() {
                     </p>
                 </div>
 
-                {/* Classes Grid */}
                 <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {scholarData.classes.map((cls) => (
+                    {classes.map((cls) => (
                         <Link
                             key={cls.id}
                             href={`/classes/${cls.id}`}
@@ -49,13 +49,12 @@ export default function ClassesPage() {
 
                             <div className="mt-10 flex items-center gap-2 text-sm font-semibold text-foreground">
                                 Darslarni ko&apos;rish
-                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
                             </div>
                         </Link>
                     ))}
                 </div>
 
-                {/* Info Section */}
                 <div className="mt-24 ac-card p-10 bg-muted/30">
                     <div className="grid gap-10 md:grid-cols-2 items-center">
                         <div>
