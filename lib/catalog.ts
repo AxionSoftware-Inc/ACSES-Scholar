@@ -1,5 +1,6 @@
 export type CatalogLesson = {
-  id: string;
+  id: number;
+  slug: string;
   title: string;
   youtubeId: string;
   description?: string;
@@ -7,14 +8,16 @@ export type CatalogLesson = {
 };
 
 export type CatalogSubject = {
-  id: string;
+  id: number;
+  slug: string;
   title: string;
   color?: string;
   lessons: CatalogLesson[];
 };
 
 export type CatalogClass = {
-  id: string;
+  id: number;
+  slug: string;
   title: string;
   subjects: CatalogSubject[];
 };

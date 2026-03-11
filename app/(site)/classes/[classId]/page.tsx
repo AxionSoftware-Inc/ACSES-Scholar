@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 export default async function ClassPage(props: { params: Promise<{ classId: string }> }) {
     const params = await props.params;
     const classes = await getCatalog();
-    const classData = classes.find((c) => c.id === params.classId);
+    const classData = classes.find((c) => c.slug === params.classId || c.id.toString() === params.classId);
 
     if (!classData) {
         notFound();
@@ -29,13 +29,13 @@ export default async function ClassPage(props: { params: Promise<{ classId: stri
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {classData.subjects.map((subject) => (
                             <Link
-                                key={subject.id}
-                                href={`/classes/${classData.id}/${subject.id}`}
+                                key={subject.slug}
+                                href={`/classes/${classData.slug}/${subject.slug}`}
                                 className="ac-card group flex flex-col justify-between p-8 transition-all hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 cursor-pointer bg-gradient-to-br from-card to-muted/20"
                             >
                                 <div>
-                                    <div className={`w-12 h-12 rounded-2xl mb-6 flex items-center justify-center text-white shadow-lg ${subject.id.includes("matematika") ? "bg-blue-600" :
-                                            subject.id.includes("fizika") ? "bg-orange-600" : "bg-primary"
+                                    <div className={`w-12 h-12 rounded-2xl mb-6 flex items-center justify-center text-white shadow-lg ${subject.slug.includes("matematika") ? "bg-blue-600" :
+                                            subject.slug.includes("fizika") ? "bg-orange-600" : "bg-primary"
                                         }`}>
                                         <span className="text-xl font-bold">{subject.title[0]}</span>
                                     </div>

@@ -10,8 +10,8 @@ import { Suspense } from "react";
 export default async function SubjectPage(props: { params: Promise<{ classId: string; subjectId: string }> }) {
     const params = await props.params;
     const classes = await getCatalog();
-    const classData = classes.find((c) => c.id === params.classId);
-    const subjectData = classData?.subjects.find((s) => s.id === params.subjectId);
+    const classData = classes.find((c) => c.slug === params.classId || c.id.toString() === params.classId);
+    const subjectData = classData?.subjects.find((s) => s.slug === params.subjectId || s.id.toString() === params.subjectId);
 
     if (!classData || !subjectData) {
         notFound();
@@ -23,7 +23,7 @@ export default async function SubjectPage(props: { params: Promise<{ classId: st
         <main className="min-h-screen pt-20 pb-16">
             <Container>
                 <div className="flex flex-col gap-6">
-                    <Link href={`/classes/${classData.id}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <Link href={`/classes/${classData.slug}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                         <ArrowLeft size={16} />
                         {classData.title}ga qaytish
                     </Link>
@@ -44,8 +44,8 @@ export default async function SubjectPage(props: { params: Promise<{ classId: st
                         <Suspense fallback={<div className="animate-pulse bg-muted h-[400px] rounded-2xl" />}>
                             <LessonPlayer
                                 lessons={subjectData.lessons}
-                                classId={classData.id}
-                                subjectId={subjectData.id}
+                                classId={classData.slug}
+                                subjectId={subjectData.slug}
                                 activeLessonId={activeLesson?.id}
                             />
                         </Suspense>

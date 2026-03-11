@@ -23,8 +23,8 @@ export default async function ClassesPage() {
                 <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {classes.map((cls) => (
                         <Link
-                            key={cls.id}
-                            href={`/classes/${cls.id}`}
+                            key={cls.slug}
+                            href={`/classes/${cls.slug}`}
                             className="ac-card group flex flex-col justify-between p-8 hover:border-foreground/20 hover:shadow-xl transition-all duration-300"
                         >
                             <div>

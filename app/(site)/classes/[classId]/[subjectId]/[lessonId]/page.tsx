@@ -8,9 +8,9 @@ import { LessonPlayer } from "@/app/components/features/LessonPlayer";
 export default async function LessonPage(props: { params: Promise<{ classId: string; subjectId: string; lessonId: string }> }) {
     const params = await props.params;
     const classes = await getCatalog();
-    const classData = classes.find((c) => c.id === params.classId);
-    const subjectData = classData?.subjects.find((s) => s.id === params.subjectId);
-    const lessonData = subjectData?.lessons.find((l) => l.id === params.lessonId);
+    const classData = classes.find((c) => c.slug === params.classId || c.id.toString() === params.classId);
+    const subjectData = classData?.subjects.find((s) => s.slug === params.subjectId || s.id.toString() === params.subjectId);
+    const lessonData = subjectData?.lessons.find((l) => l.slug === params.lessonId || l.id.toString() === params.lessonId);
 
     if (!classData || !subjectData || !lessonData) {
         notFound();
@@ -20,7 +20,7 @@ export default async function LessonPage(props: { params: Promise<{ classId: str
         <main className="min-h-screen pt-20 pb-16">
             <Container>
                 <div className="flex flex-col gap-6">
-                    <Link href={`/classes/${classData.id}/${subjectData.id}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <Link href={`/classes/${classData.slug}/${subjectData.slug}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                         <ArrowLeft size={16} />
                         Mavzular ro&apos;yxatiga qaytish
                     </Link>
@@ -37,8 +37,8 @@ export default async function LessonPage(props: { params: Promise<{ classId: str
                     <div className="mt-6">
                         <LessonPlayer
                             lessons={subjectData.lessons}
-                            classId={classData.id}
-                            subjectId={subjectData.id}
+                            classId={classData.slug}
+                            subjectId={subjectData.slug}
                             activeLessonId={lessonData.id}
                         />
                     </div>

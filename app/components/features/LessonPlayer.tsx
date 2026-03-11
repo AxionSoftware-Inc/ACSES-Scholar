@@ -6,7 +6,8 @@ import { useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
 
 type Lesson = {
-    "id": string;
+    "id": number;
+    "slug": string;
     "title": string;
     "youtubeId": string;
     "description"?: string;
@@ -17,7 +18,7 @@ interface LessonPlayerProps {
     lessons: Lesson[];
     classId: string;
     subjectId: string;
-    activeLessonId?: string;
+    activeLessonId?: number;
 }
 
 export function LessonPlayer({ lessons, classId, subjectId, activeLessonId }: LessonPlayerProps) {
@@ -36,9 +37,9 @@ export function LessonPlayer({ lessons, classId, subjectId, activeLessonId }: Le
         if (!activeLesson) return;
         void trackEvent({
             event_type: "lesson_open",
-            path: `/classes/${classId}/${subjectId}/${activeLesson.id}`,
+            path: `/classes/${classId}/${subjectId}/${activeLesson.slug}`,
             label: `${classId}:${subjectId}`,
-            metadata: { lesson_id: activeLesson.id, lesson_title: activeLesson.title },
+            metadata: { lesson_id: activeLesson.id, lesson_slug: activeLesson.slug, lesson_title: activeLesson.title },
         });
     }, [activeLesson, classId, subjectId]);
 
@@ -89,7 +90,7 @@ export function LessonPlayer({ lessons, classId, subjectId, activeLessonId }: Le
                 <div className="grid gap-3 overflow-y-auto pr-2 custom-scrollbar">
                     {lessons.map((lesson, index) => {
                         const isActive = activeLesson?.id === lesson.id;
-                        const lessonUrl = `/classes/${classId}/${subjectId}/${lesson.id}`;
+                        const lessonUrl = `/classes/${classId}/${subjectId}/${lesson.slug}`;
 
                         return (
                             <Link
@@ -142,4 +143,3 @@ export function LessonPlayer({ lessons, classId, subjectId, activeLessonId }: Le
         </div>
     );
 }
-
