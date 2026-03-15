@@ -10,7 +10,7 @@ export type BlogPost = {
   slug: string;
   content: string;
   excerpt?: string;
-  thumbnail?: string; // This will be the full URL from DRF
+  thumbnail?: string;
   category_name?: string;
   author_name?: string;
   tags_list?: Tag[];
@@ -32,7 +32,7 @@ const API_BASE =
 export async function getBlogPosts(): Promise<BlogPost[]> {
   try {
     const res = await fetch(`${API_BASE}/blog-posts/`, {
-      next: { revalidate: 60 }, // ISR: Cache for 60 seconds
+      cache: "no-store",
     });
     
     if (!res.ok) return [];
@@ -48,9 +48,8 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 
 export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   try {
-    // We filter by slug using DRF query params
     const res = await fetch(`${API_BASE}/blog-posts/?slug=${slug}`, {
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
     
     if (!res.ok) return null;
