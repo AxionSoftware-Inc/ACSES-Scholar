@@ -23,6 +23,68 @@ cd backend
 
 Backend runs on `http://127.0.0.1:8000`.
 
+## Docker Production Deploy
+
+Bu repo backend submodule bilan ishlaydi:
+
+```bash
+git clone --recurse-submodules https://github.com/ACSES-corp/ACSES-Scholar.git
+cd ACSES-Scholar
+```
+
+Serverda env fayllarni tayyorlang:
+
+```bash
+cp deploy/env/frontend.env.example deploy/env/frontend.env
+cp deploy/env/backend.env.example deploy/env/backend.env
+cp deploy/env/db.env.example deploy/env/db.env
+```
+
+Keyin production stackni ishga tushiring:
+
+```bash
+docker compose -f docker-compose.prod.yml up -d --build
+```
+
+Nginx `80` portda ishlaydi:
+
+- Frontend: `http://your-domain/`
+- API: `http://your-domain/api/v1/`
+- Django admin: `http://your-domain/django-admin/`
+
+## Alternate Port Deploy
+
+Agar serverda `80` portda boshqa loyiha ishlayotgan bo'lsa, nginx'siz variantni ishlating:
+
+```bash
+docker compose -f docker-compose.server.yml up -d --build
+```
+
+Bu holda:
+
+- Frontend: `http://your-server:8081`
+- Django admin: `http://your-server:8081/django-admin/`
+- API: `http://your-server:8081/api/v1/`
+
+## Update Workflow
+
+Lokal o'zgarishlardan keyin:
+
+1. Frontend o'zgargan bo'lsa `ACSES-Scholar` repo'ga push qiling.
+2. Backend o'zgargan bo'lsa `Scholar-Backend` repo'ga push qiling.
+3. Serverda ushbu buyruqni ishlating:
+
+```bash
+./scripts/server-update.sh
+```
+
+Bu skript:
+
+- root repo uchun `git pull` qiladi
+- backend submodule'ni init/update qiladi
+- backend repo ichida ham `git pull` qiladi
+- `docker compose up -d --build` bilan containerlarni yangilaydi
+
 ## Environment
 
 Frontend `.env.local`:

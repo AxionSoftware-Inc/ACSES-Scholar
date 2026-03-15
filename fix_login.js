@@ -23,8 +23,8 @@ async function run() {
 
     // 1. Upload local fixes (Settings and Admin creation)
     console.log('Uploading fixes...')
-    await ssh.putFile('./Quantum uz backend/project/settings.py', `${backendPath}/project/settings.py`)
-    await ssh.putFile('./Quantum uz backend/create_admin.py', `${backendPath}/create_admin.py`)
+    await ssh.putFile('./ACSES Scholar backend/project/settings.py', `${backendPath}/project/settings.py`)
+    await ssh.putFile('./ACSES Scholar backend/create_admin.py', `${backendPath}/create_admin.py`)
 
     // 2. Run admin creation
     await exec(`./venv/bin/python3 create_admin.py`, backendPath)

@@ -13,8 +13,8 @@ async function run() {
     });
 
     // 1. Upload Backend Files
-    await ssh.putFile('d:\\Complete\\ACSES Scholar\\Quantum uz backend\\application\\models.py', '/var/www/acses_backend/application/models.py');
-    await ssh.putFile('d:\\Complete\\ACSES Scholar\\Quantum uz backend\\application\\serializers.py', '/var/www/acses_backend/application/serializers.py');
+    await ssh.putFile('d:\\Complete\\ACSES Scholar\\ACSES Scholar backend\\application\\models.py', '/var/www/acses_backend/application/models.py');
+    await ssh.putFile('d:\\Complete\\ACSES Scholar\\ACSES Scholar backend\\application\\serializers.py', '/var/www/acses_backend/application/serializers.py');
     await ssh.putFile('d:\\Complete\\ACSES Scholar\\seed.py', '/var/www/acses_backend/seed.py');
     console.log("Uploaded Backend Files");
 

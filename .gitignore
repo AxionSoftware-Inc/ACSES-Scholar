@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+deploy/env/*.env
+!deploy/env/*.env.example
 
 # vercel
 .vercel
@@ -49,3 +51,10 @@ backend/**/*.pyc
 backend/db.sqlite3
 backend/staticfiles/
 backend/media/
+ACSES Scholar backend/.env
+ACSES Scholar backend/venv/
+ACSES Scholar backend/__pycache__/
+ACSES Scholar backend/**/__pycache__/
+ACSES Scholar backend/**/*.pyc
+ACSES Scholar backend/staticfiles/
+ACSES Scholar backend/media/

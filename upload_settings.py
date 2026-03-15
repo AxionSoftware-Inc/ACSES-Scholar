@@ -7,7 +7,7 @@ def run():
     client.connect('62.72.32.37', username='root', password='Aa7161062.123')
     
     with client.open_sftp() as sftp:
-        sftp.put(r'd:\Complete\ACSES Scholar\Quantum uz backend\project\settings.py', '/var/www/acses_backend/project/settings.py')
+        sftp.put(r'd:\Complete\ACSES Scholar\ACSES Scholar backend\project\settings.py', '/var/www/acses_backend/project/settings.py')
         print("Uploaded settings.py")
     
     client.exec_command('systemctl restart acses_backend')

@@ -1,0 +1,9 @@
+.git
+.gitmodules
+.next
+node_modules
+npm-debug.log*
+deploy/env/*.env
+ACSES Scholar backend
+README.md
+*.py

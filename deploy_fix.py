@@ -8,8 +8,8 @@ def run():
     
     with client.open_sftp() as sftp:
         # Backend
-        sftp.put(r'd:\Complete\ACSES Scholar\Quantum uz backend\application\models.py', '/var/www/acses_backend/application/models.py')
-        sftp.put(r'd:\Complete\ACSES Scholar\Quantum uz backend\application\serializers.py', '/var/www/acses_backend/application/serializers.py')
+        sftp.put(r'd:\Complete\ACSES Scholar\ACSES Scholar backend\application\models.py', '/var/www/acses_backend/application/models.py')
+        sftp.put(r'd:\Complete\ACSES Scholar\ACSES Scholar backend\application\serializers.py', '/var/www/acses_backend/application/serializers.py')
         print("Uploaded models/serializers")
         
         sftp.put(r'd:\Complete\ACSES Scholar\seed.py', '/var/www/acses_backend/seed.py')

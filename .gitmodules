@@ -1,0 +1,4 @@
+[submodule "ACSES Scholar backend"]
+	path = ACSES Scholar backend
+	url = https://github.com/ACSES-corp/Scholar-Backend.git
+	branch = main
