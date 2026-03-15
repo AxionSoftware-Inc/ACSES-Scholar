@@ -8,8 +8,17 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getBlogPost(params.slug);
+type BlogPostPageProps = {
+  params: Promise<{ slug: string }> | { slug: string };
+};
+
+async function resolveParams(params: BlogPostPageProps["params"]) {
+  return await Promise.resolve(params);
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps) {
+  const { slug } = await resolveParams(params);
+  const post = await getBlogPost(slug);
   if (!post) return {};
 
   return {
@@ -23,8 +32,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getBlogPost(params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await resolveParams(params);
+  const post = await getBlogPost(slug);
 
   if (!post) {
     notFound();
